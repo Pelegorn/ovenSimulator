@@ -1,6 +1,6 @@
 clear; clc;
 %% Input data
-load('defaults.mat');
+d = load('defaults.mat');
 
 %% Calculation
 %calculations are based on temperature in (Tdb), relative humidity of
