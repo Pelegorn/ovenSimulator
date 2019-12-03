@@ -1,6 +1,12 @@
 clear; clc;
 %% Input data
-d = load('defaults.mat');
+delta_man_w_c = 0.8-0.2;
+
+s_air_t_cels = 30;
+s_air_humidity = 0.9;
+drying_air_t_cels = 55;
+wet_air_t_cels = 42;
+temp_loss = 39;
 
 %% Calculation
 %calculations are based on temperature in (Tdb), relative humidity of
@@ -9,35 +15,46 @@ addpath('psychrometric');
 
 % intitial situation
 [Tdb, w, ~, h, ~, ~, ~] = ...
-Psychrometricsnew('Tdb', d.s_air_t_cels, ...
-                  'phi', d.s_air_humidity*100);
+Psychrometricsnew('Tdb', s_air_t_cels, ...
+                  'phi', s_air_humidity*100);
 processdata = [Tdb, w, h];
 
 % heating up the air
 [Tdb, w, ~, h, ~, ~, ~] = ...
-Psychrometricsnew('Tdb', d.air_in_t_cels, ...
+Psychrometricsnew('Tdb', drying_air_t_cels, ...
                   'w', w);
 processdata = [processdata; Tdb, w, h];
 
 % intake of water
 [Tdb, w, ~, h, ~, ~, ~] = ...
-Psychrometricsnew('Tdb', d.air_out_t_cels, ...
+Psychrometricsnew('Tdb', wet_air_t_cels, ...
                   'h', h);
 processdata = [processdata; Tdb, w, h];
+
+% temperature loss because of oven
+[Tdb, w, ~, h, ~, ~, ~] = ...
+Psychrometricsnew('w', w, ...
+                  'Tdb', temp_loss);
+processdata = [processdata; Tdb, w, h];
+
 
 clear('Tdb', 'w', 'h'); %a little bit of garbage handling
 
 % numeric calculations
-enthalpy_air_difference = processdata(2,3) - processdata(1,3);
+enthalpy_air_difference = processdata(2,3) - processdata(1,3)
 delta_air_water_content = processdata(3,2) - processdata(2,2);
+
+enthalpy_liquidation = processdata(4,3) - processdata(1,3)
 
 
 energy_per_kg_mango = ...
-    (d.delta_man_w_c/delta_air_water_content)*enthalpy_air_difference
+    (delta_man_w_c/delta_air_water_content) ...
+    *(enthalpy_air_difference - enthalpy_liquidation)
+    
 
 % unsure and only for the evaporation process (maybe burning is important)
 air_per_kg_mango = ...
-    ((1-processdata(3,2))/delta_air_water_content)*d.delta_man_w_c
+    ((1-processdata(3,2))/delta_air_water_content)*delta_man_w_c
 
 %idealer Prozess mit realen Werten braucht ca. 100g Butan pro kg Mango
 %ungefähr 100m^3 Luft zur Trocknung
