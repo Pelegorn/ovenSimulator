@@ -1,7 +1,23 @@
 function [energy_per_kg_mango, air_per_kg_mango] = ...
-    idealDrying(UIaxes, m_hum_in, m_hum_out, s_air_t, s_air_hum, t_in, t_out)
-%IDEALDRYING returns a plot, energy and air use of ideal drying
-%   Detailed explanation goes here
+    idealDrying(UIaxes, m_hum_in, m_hum_out, s_air_t, s_air_hum, ...
+    t_in, t_out)
+%IDEALDRYING calculates an ideal convective dryer (e.g. ideal ATESTA)
+%   
+%   inputs:
+%   m_hum_in:   humidity of raw-mango (in percent)
+%   m_hum_out:  humidity of dry-mango (in percent)
+%   s_air_hum:  humidity of air at the coldest point (in percent)
+%   t_in:       air temperature entering the oven (burner temperature) in
+%               degree Celsius
+%   t_in:       air temperature leaving the oven (chimney temperature) in
+%               degree Celsius
+%   UIaxes:     GUI-Axes File to plot psychrometric chart
+%   
+%   outputs:
+%   energy_per_kg_mango:    amount of energy used by ideal convective
+%                           dryer
+%   air_per_kg_mango:       amount of air used, to transport the needed
+%                           energy (can be used to calculate a fan)
 
 %% Calculation
 %calculations are based on temperature in (Tdb), relative humidity of
@@ -36,7 +52,7 @@ delta_m_hum = (m_hum_in-m_hum_out)/100;
 energy_per_kg_mango = ...
     (delta_m_hum/delta_air_water_content)*enthalpy_air_difference;
 
-% unsure and only for the evaporation process (maybe burning is important)
+% air used to transport exactly that amount of heat
 air_per_kg_mango = ...
     ((1-processdata(3,2))/delta_air_water_content)*delta_m_hum;
 
