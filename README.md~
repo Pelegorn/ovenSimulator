@@ -45,8 +45,45 @@ Returns output data for ideal convective drying processes.
 Returns output data for ideal condensation drying processes.
 #### inputs:
 * app: GUI-data variable
- #### outputs:
-energySecondary:    Secondary energy used to dry mangos
-energyPrimary:      Primary energy used to dry mangos
-energyElectricity:  Current needed in kWh
-CO2weight:          emitted CO2 due to burning butane
+#### outputs:
+* energySecondary:    Secondary energy used to dry mangos
+* energyPrimary:      Primary energy used to dry mangos
+* energyElectricity:  Current needed in kWh
+* CO2weight:          emitted CO2 due to burning butane
+
+## idealDrying
+Calculates an ideal convective dryer (e.g. ideal ATESTA).
+### inputs:
+* m_hum_in:   humidity of raw-mango (in percent)
+* m_hum_out:  humidity of dry-mango (in percent)
+* s_air_hum:  humidity of air at the coldest point (in percent)
+* t_in:       air temperature entering the oven (burner temperature) in degree Celsius
+* t_in:       air temperature leaving the oven (chimney temperature) in degree Celsius
+* UIaxes:     GUI-Axes File to plot psychrometric chart
+### outputs:
+* energy_per_kg_mango:    amount of energy used by ideal convective dryer
+* air_per_kg_mango:       amount of air used, to transport the needed energy (can be used to calculate a fan)
+
+## idealCondensation 
+Calculates an ideal condensation dryer (heat pump).T his function uses coolProp, make sure to have coolProp installed in
+%   an MATLAB compatible Phython version (in Phython use: pip install
+%   coolProp)
+%   For more information, see <a href="coolProp: 
+%   web('http://www.coolprop.org/')">the coolProp Web site</a>.
+%   
+%   inputs:
+%   temp_cooling:   low temperature of the heat pump
+%   temp_heating:   high temperature of the heat pump
+%   superheat:      amount of degrees to overheat (compressor protection)
+%   m_hum_in:       humidity of raw-mango (in percent)
+%   m_hum_out:      humidity of dry-mango (in percent)
+%   air_hum:        humidity of air at the coldest point (in percent)
+%   UIaxes:         GUI-Axes File to plot psychrometric chart
+%   
+%   outputs:
+%   energy_per_kg_mango:    amount of energy used by ideal condesation
+%                           dryer
+%   air_per_kg_mango:       amount of air used, to transport the needed
+%                           energy (can be used to calculate a fan)
+%   COP_heating:            Coefficient of Power of the heating process in
+%                           the heat pump

@@ -9,3 +9,7 @@
 08-Jan-2020 09:27:44: csv export aborted
 08-Jan-2020 09:27:48: successful csv export
 08-Jan-2020 09:27:51: finished session
+08-Jan-2020 13:43:53: started session
+08-Jan-2020 13:44:20: plot creation aborted
+08-Jan-2020 13:44:24: csv export aborted
+08-Jan-2020 13:44:26: finished session
