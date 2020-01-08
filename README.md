@@ -5,7 +5,7 @@ Course of studies: Energy and Environmental Technologies
 Module: MATLAB-Workshob
 Lecturer: Prof. Dr. Norbert Hofmann
 ```
-![logoFHNW](relative/img/logoFHNW.pdf?raw=true "logoFHNW")
+![logoFHNW](/img/logoFHNW.pdf?raw=true "logoFHNW")
 
 
 ### Features
