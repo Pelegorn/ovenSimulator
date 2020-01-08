@@ -2,7 +2,7 @@ function mangoSimulator()
 %MANGOSIMULATOR this function starts the software with splashScreen wrapper
 %   Descritption:   GUI for simulation of drying mangos
 %   Author:         Mario Hügi
-%   Date:           05. January 2020
+%   Date:           09. January 2020
 
 % splash screen startup and configuration
 s = SplashScreen('SplashScreen', 'img/mango.png');
