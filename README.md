@@ -32,9 +32,9 @@ This script was created within the scope of an EUT project (EUT-P3-19HS-08). The
 This function starts the software with a splashScreen wrapper.
 ### specificIdealConvective
 Returns output data for ideal convective processes
-###inputs:
+#### inputs:
 app: GUI-data variable
-###outputs:
+#### outputs:
 energySecondary: Secondary energy used to dry mangos
 energyPrimary:   Primary energy used to dry mangos
 energyButane:    Amount of Butane needed
