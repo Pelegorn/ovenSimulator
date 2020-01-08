@@ -30,12 +30,23 @@ This script was created within the scope of an EUT project (EUT-P3-19HS-08). The
 ## Function description
 ### mangoSimulator
 This function starts the software with a splashScreen wrapper.
+
 ### specificIdealConvective
-Returns output data for ideal convective processes
+Returns output data for ideal convective drying processes.
 #### inputs:
-app: GUI-data variable
+* app: GUI-data variable
 #### outputs:
-energySecondary: Secondary energy used to dry mangos
-energyPrimary:   Primary energy used to dry mangos
-energyButane:    Amount of Butane needed
-CO2weight:       emitted CO2 due to burning butane
+* energySecondary: Secondary energy used to dry mangos
+* energyPrimary:   Primary energy used to dry mangos
+* energyButane:    Amount of Butane needed
+* CO2weight:       emitted CO2 due to burning butane
+
+### specificIdealCondensation
+Returns output data for ideal condensation drying processes.
+#### inputs:
+* app: GUI-data variable
+#### outputs:
+* energySecondary:    Secondary energy used to dry mangos
+* energyPrimary:      Primary energy used to dry mangos
+* energyElectricity:  Current needed in kWh
+* CO2weight:          emitted CO2 due to burning butane
