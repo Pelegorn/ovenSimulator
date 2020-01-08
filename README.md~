@@ -22,6 +22,13 @@ Lecturer: Prof. Dr. Norbert Hofmann
 * [Function description](#function-description)
   * [mangoSimulator](#mangosimulator)
   * [specificIdealConvective](#specificidealconvective)
+  * [specificIdealCondensation](#specificidealcondensation)
+  * [idealDrying](#idealdrying)
+  * [idealCondensation](#idealcondensation)
+  * [logFileGenerator](#logfilegenerator)
+  * [drawPlot](#drawplot)
+  * [drawPdf](#drawpdf)
+  * [exportCSV](#exportcsv)
 
 
 ## General Overview
@@ -51,22 +58,22 @@ Returns output data for ideal condensation drying processes.
 * energyElectricity:  Current needed in kWh
 * CO2weight:          emitted CO2 due to burning butane
 
-## idealDrying
+### idealDrying
 Calculates an ideal convective dryer (e.g. ideal ATESTA).
-### inputs:
+#### inputs:
 * m_hum_in:   humidity of raw-mango (in percent)
 * m_hum_out:  humidity of dry-mango (in percent)
 * s_air_hum:  humidity of air at the coldest point (in percent)
 * t_in:       air temperature entering the oven (burner temperature) in degree Celsius
 * t_in:       air temperature leaving the oven (chimney temperature) in degree Celsius
 * UIaxes:     GUI-Axes File to plot psychrometric chart
-### outputs:
+#### outputs:
 * energy_per_kg_mango:    amount of energy used by ideal convective dryer
 * air_per_kg_mango:       amount of air used, to transport the needed energy (can be used to calculate a fan)
 
-## idealCondensation 
+### idealCondensation 
 Calculates an ideal condensation dryer (heat pump).This function uses coolProp, make sure to have coolProp installed in an MATLAB compatible Phython version (in Phython use: pip install coolProp) For more information, see [CoolProp-Website](http://www.coolprop.org/ "CoolProp-Website").
-### inputs:
+#### inputs:
 * temp_cooling:   low temperature of the heat pump
 * temp_heating:   high temperature of the heat pump
 * superheat:      amount of degrees to overheat (compressor protection)
@@ -74,30 +81,29 @@ Calculates an ideal condensation dryer (heat pump).This function uses coolProp, 
 * m_hum_out:      humidity of dry-mango (in percent)
 * air_hum:        humidity of air at the coldest point (in percent)
 * UIaxes:         GUI-Axes File to plot psychrometric chart
-### outputs:
+#### outputs:
 * energy_per_kg_mango:    amount of energy used by ideal condesation dryer
 * air_per_kg_mango:       amount of air used, to transport the needed energy (can be used to calculate a fan)
 * COP_heating:            Coefficient of Power of the heating process in the heat pump
 
-## logFileGenerator
+### logFileGenerator
 Simple text logger for software statistics
-### input:
+#### input:
 * logMessage: Message to log into log-file.
 
-## drawPlot 
+### drawPlot 
 Plots the input UIFigure to pdf, png or jpeg. The plotted pdf are usable as scalable vector graphics e.g. in latex. Jpeg and png are not scalable and worse in quality.
-### input:
+#### input:
 * app: GUI-data variable
 
-## drawPdf
+### drawPdf
 Generates cutted pdf out of a MATLAB figure.
-### inputs:
+#### inputs:
 * fig: MATLAB-figure to plot
 * path: Path where file should be stored
 * name: Name of file to store
 
-## exportCsv exports all input and output data to csv, txt or dat
-%   User can choose path and filename in a opening prompt
-%
-%   input:
-%   app: app: GUI-data variable
+### exportCSV
+Exports all input and output data to CSV, TXT or DAT file. User can choose path and filename in a opening prompt.
+#### input:
+* app: app: GUI-data variable
