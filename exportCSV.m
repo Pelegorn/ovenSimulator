@@ -1,6 +1,9 @@
 function exportCSV(app)
 %EXPORTCSV exports all input and output data to csv, txt or dat
 %   User can choose path and filename in a opening prompt
+%
+%   input:
+%   app: app: GUI-data variable
 
 % user input
 filter = {'*.csv'; '*.txt'; '*.dat'};

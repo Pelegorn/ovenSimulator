@@ -65,7 +65,7 @@ Calculates an ideal convective dryer (e.g. ideal ATESTA).
 * air_per_kg_mango:       amount of air used, to transport the needed energy (can be used to calculate a fan)
 
 ## idealCondensation 
-Calculates an ideal condensation dryer (heat pump).T his function uses coolProp, make sure to have coolProp installed in an MATLAB compatible Phython version (in Phython use: pip install coolProp) For more information, see <a href="coolProp: web('http://www.coolprop.org/')">the coolProp Web site</a>.
+Calculates an ideal condensation dryer (heat pump).This function uses coolProp, make sure to have coolProp installed in an MATLAB compatible Phython version (in Phython use: pip install coolProp) For more information, see [CoolProp-Website](http://www.coolprop.org/ "CoolProp-Website").
 ### inputs:
 * temp_cooling:   low temperature of the heat pump
 * temp_heating:   high temperature of the heat pump
@@ -78,3 +78,25 @@ Calculates an ideal condensation dryer (heat pump).T his function uses coolProp,
 * energy_per_kg_mango:    amount of energy used by ideal condesation dryer
 * air_per_kg_mango:       amount of air used, to transport the needed energy (can be used to calculate a fan)
 * COP_heating:            Coefficient of Power of the heating process in the heat pump
+
+## logFileGenerator
+Simple text logger for software statistics
+### input:
+* logMessage: Message to log into log-file.
+
+## drawPlot 
+Plots the input UIFigure to pdf, png or jpeg. The plotted pdf are usable as scalable vector graphics e.g. in latex. Jpeg and png are not scalable and worse in quality.
+### input:
+* app: GUI-data variable
+
+## drawPdf
+Generates cutted pdf out of a MATLAB figure.
+### inputs:
+* fig: MATLAB-figure to plot
+* path: Path where file should be stored
+* name: Name of file to store
+
+## exportCSV
+Exports all input and output data to CSV, TXT or DAT file. User can choose path and filename in a opening prompt.
+### input:
+* app: app: GUI-data variable

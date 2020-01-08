@@ -2,6 +2,9 @@ function [] = drawPlot(app)
 %DRAWPLOT plots the input UIFigure to pdf, png or jpeg
 %   The plotted pdf are usable as scalable vector graphics e.g. in latex
 %   jpeg and png are not scalable and worse in quality
+%
+%   input:
+%   app: app: GUI-data variable
 
 % user input
 filter = {'*.pdf';'*.png';'*.jpeg'};

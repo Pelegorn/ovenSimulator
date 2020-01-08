@@ -1,5 +1,8 @@
 function logFileGenerator(logMessage)
 %LOGFILEGENERATOR Simple text logger for software statistics
+%
+%   input:
+%   logMessage: Message to log into log-file.
 
 fid = fopen('mangoSimulator_logFile.txt', 'a');
 if fid == -1
