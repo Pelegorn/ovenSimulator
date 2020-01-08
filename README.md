@@ -14,13 +14,13 @@ Course of studies: Energy and Environmental Technologies
 * MATLAB-Toolboxes used: X-Steam, SplashScreen
 * MATLAB-Toolboxes used and modified: SI Psychrometric Chart
 
-#Mango Drying Simulator
+# Mango Drying Simulator
 
 **Table of Contents**
 [TOC]
 
-#General Overview
+# General Overview
 
-#Function description
-##Func1
-##Func2
+# Function description
+## Func1
+## Func2
