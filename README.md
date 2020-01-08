@@ -1,3 +1,5 @@
+![logoFHNW](/img/logoFHNW.jpg?raw=true "logoFHNW")
+
 ```
 Author: Mario Huegi
 Institution: FHNW - University of Applied Sciences Northwestern Switzerland
@@ -5,8 +7,6 @@ Course of studies: Energy and Environmental Technologies
 Module: MATLAB-Workshob
 Lecturer: Prof. Dr. Norbert Hofmann
 ```
-![logoFHNW](/img/logoFHNW.jpg?raw=true "logoFHNW")
-
 
 ### Features
 * Graphical interface for mango drying simulation
@@ -31,6 +31,10 @@ Lecturer: Prof. Dr. Norbert Hofmann
   * [drawPlot](#drawplot)
   * [drawPdf](#drawpdf)
   * [exportCSV](#exportcsv)
+* [GUI description](#gui-description)
+* [CoolProp](#coolprop)
+  * [Installation](#installation)
+  * [Use of CoolProp](#use-of-coolprop)
 
 
 ## General Overview
@@ -109,3 +113,19 @@ Generates cutted pdf out of a MATLAB figure.
 Exports all input and output data to CSV, TXT or DAT file. User can choose path and filename in a opening prompt.
 #### input:
 * app: app: GUI-data variable
+
+## GUI description
+The GUI is mainly based on the functions listed above. If you open the GUI.mlapp file, you get to the App-Designer of MATLAB. Like most GUI designers, it is divided into a graphical and a textual (code) part.
+
+## CoolProp
+### Installation
+Using the pip installation program, you can install the official release from the pypi server using:
+```
+pip install CoolProp
+```
+There are also unofficial Conda packages available from the conda-forge channel. To install, use:
+```
+conda install conda-forge::coolprop
+```
+### Use of CoolProp
+In the folder etc you can find a MATLAB wrapper. It is recommended to perform a first functional test of the wrapper with CoolPropWrapperTest.m. If problems occur during configuration, the wrapper will inform you and suggest solutions. Once CoolProp is properly configured, it works in the background and requires no maintenance.
