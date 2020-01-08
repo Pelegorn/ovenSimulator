@@ -28,6 +28,21 @@ function [energy_per_kg_mango, air_per_kg_mango, COP_heating] = ...
 %% heat pump calculation
 addpath('etc/coolPropWrapper');
 
+%check User Input
+if temp_heating-temp_cooling < 20
+    logFileGenerator('Wrong User Input in idealCondensation');
+    msgbox('Heating and cooling difference must be more than 20° Celsius!');
+    energy_per_kg_mango = 0; 
+    air_per_kg_mango    = 0;
+    return
+elseif m_hum_in <= m_hum_out
+    logFileGenerator('Wrong User Input in idealCondensation');
+    msgbox('Humidity_in must be higher than Humidity_out!');
+    energy_per_kg_mango = 0; 
+    air_per_kg_mango    = 0;
+    return
+end
+
 % Saturated vapour enthalpy in
 enthalpy_mid1 = PropsSI('H', 'T', 273.15+temp_cooling-superheat, 'Q', 1, 'R134a');
 p_low         = PropsSI('P', 'T', 273.15+temp_cooling-superheat, 'Q', 1, 'R134a');

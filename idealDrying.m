@@ -19,6 +19,21 @@ function [energy_per_kg_mango, air_per_kg_mango] = ...
 %   air_per_kg_mango:       amount of air used, to transport the needed
 %                           energy (can be used to calculate a fan)
 
+%% check User Input
+if t_in <= t_out
+    logFileGenerator('Wrong User Input in idealConvective');
+    msgbox('Temperature_in must be higher than temperature_out!');
+    energy_per_kg_mango = 0; 
+    air_per_kg_mango    = 0;
+    return
+elseif m_hum_in <= m_hum_out
+    logFileGenerator('Wrong User Input in idealConvective');
+    msgbox('Humidity_in must be higher than Humidity_out!');
+    energy_per_kg_mango = 0; 
+    air_per_kg_mango    = 0;
+    return
+end
+
 %% Calculation
 %calculations are based on temperature in (Tdb), relative humidity of
 %the air in % (phi) and absolut humidity of the air in kg/kg (w)

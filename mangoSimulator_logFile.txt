@@ -13,3 +13,32 @@
 08-Jan-2020 13:44:20: plot creation aborted
 08-Jan-2020 13:44:24: csv export aborted
 08-Jan-2020 13:44:26: finished session
+08-Jan-2020 14:35:36: started session
+08-Jan-2020 14:36:24: finished session
+08-Jan-2020 14:41:12: started session
+08-Jan-2020 14:41:49: Wrong User Input in idealCondensation
+08-Jan-2020 14:42:12: finished session
+08-Jan-2020 14:44:26: started session
+08-Jan-2020 14:44:29: finished session
+08-Jan-2020 14:44:48: started session
+08-Jan-2020 14:45:03: Wrong User Input in idealCondensation
+08-Jan-2020 14:45:17: finished session
+08-Jan-2020 14:46:42: started session
+08-Jan-2020 14:46:50: Wrong User Input in idealCondensation
+08-Jan-2020 14:46:58: Wrong User Input in idealCondensation
+08-Jan-2020 14:47:06: Wrong User Input in idealCondensation
+08-Jan-2020 14:47:13: Wrong User Input in idealCondensation
+08-Jan-2020 14:47:36: finished session
+08-Jan-2020 14:49:49: started session
+08-Jan-2020 14:49:57: Wrong User Input in idealCondensation
+08-Jan-2020 14:50:08: Wrong User Input in idealCondensation
+08-Jan-2020 14:50:16: finished session
+08-Jan-2020 14:52:39: Wrong User Input in idealConvective
+08-Jan-2020 14:52:39: started session
+08-Jan-2020 14:52:42: finished session
+08-Jan-2020 14:53:00: started session
+08-Jan-2020 14:53:06: Wrong User Input in idealConvective
+08-Jan-2020 14:53:11: Wrong User Input in idealConvective
+08-Jan-2020 14:53:28: Wrong User Input in idealConvective
+08-Jan-2020 14:53:35: Wrong User Input in idealConvective
+08-Jan-2020 14:53:51: finished session
