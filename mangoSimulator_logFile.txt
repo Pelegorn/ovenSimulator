@@ -1,0 +1,11 @@
+08-Jan-2020 09:08:41: successful startup
+08-Jan-2020 09:09:15: successful startup
+08-Jan-2020 09:16:46: started session
+08-Jan-2020 09:16:48: finished session
+08-Jan-2020 09:27:23: started session
+08-Jan-2020 09:27:28: plot creation aborted
+08-Jan-2020 09:27:32: plot creation aborted
+08-Jan-2020 09:27:39: successful plot export
+08-Jan-2020 09:27:44: csv export aborted
+08-Jan-2020 09:27:48: successful csv export
+08-Jan-2020 09:27:51: finished session
