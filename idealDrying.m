@@ -25,21 +25,15 @@ function [energy_per_kg_mango, air_per_kg_mango] = ...
 addpath('psychrometric');
 
 % intitial situation
-[Tdb, w, ~, h, ~, ~, ~] = ...
-Psychrometricsnew('Tdb', s_air_t, ...
-                  'phi', s_air_hum);
+[Tdb, w, ~, h, ~, ~, ~] = Psychrometricsnew('Tdb', s_air_t, 'phi', s_air_hum);
 processdata = [Tdb, w, h];
 
 % heating up the air
-[Tdb, w, ~, h, ~, ~, ~] = ...
-Psychrometricsnew('Tdb', t_in, ...
-                  'w', w);
+[Tdb, w, ~, h, ~, ~, ~] = Psychrometricsnew('Tdb', t_in, 'w', w);
 processdata = [processdata; Tdb, w, h];
 
 % intake of water
-[Tdb, w, ~, h, ~, ~, ~] = ...
-Psychrometricsnew('Tdb', t_out, ...
-                  'h', h);
+[Tdb, w, ~, h, ~, ~, ~] = Psychrometricsnew('Tdb', t_out, 'h', h);
 processdata = [processdata; Tdb, w, h];
 
 clear('Tdb', 'w', 'h'); %a little bit of garbage handling

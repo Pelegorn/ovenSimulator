@@ -8,6 +8,7 @@ filter = {'*.csv'; '*.txt'; '*.dat'};
 
 %0 = action cancelled by user
 if name == 0
+    logFileGenerator('csv export aborted');
     msgbox('Operation cancelled');
     return
 end
@@ -60,5 +61,6 @@ switch type
 end
 
 % confirmation of success
+logFileGenerator('successful csv export');
 msgbox('Saving completed');
 end

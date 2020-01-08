@@ -9,6 +9,7 @@ filter = {'*.pdf';'*.png';'*.jpeg'};
 
 %0 = action cancelled by user
 if name == 0
+    logFileGenerator('plot creation aborted');
     msgbox('Operation cancelled');
     return
 end
@@ -38,5 +39,6 @@ end
 delete(fig);
 
 % confirmation of success
+logFileGenerator('successful plot export');
 msgbox('Saving completed');
 end
