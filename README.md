@@ -16,11 +16,12 @@ Course of studies: Energy and Environmental Technologies
 
 # Mango Drying Simulator
 
-**Table of Contents**
-[TOC]
+## Table of Contents
+* [General Overview](#generalOverview)
 
-# General Overview
+<a name="generalOverview"/>
+## General Overview
 
-# Function description
-## Func1
-## Func2
+## Function description
+### Func1
+### Func2
