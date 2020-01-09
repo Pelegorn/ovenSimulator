@@ -18,6 +18,9 @@ Lecturer: Prof. Dr. Norbert Hofmann
 * MATLAB-Toolboxes used: X-Steam, SplashScreen
 * MATLAB-Toolboxes used and modified: SI Psychrometric Chart
 
+### Tutorial (german only)
+The folder tutorial Videos contains some tutorial videos in german language.
+
 # Mango Drying Simulator
 
 * [General Overview](#general-overview)
@@ -77,7 +80,7 @@ Calculates an ideal convective dryer (e.g. ideal ATESTA).
 * energy_per_kg_mango:    amount of energy used by ideal convective dryer
 * air_per_kg_mango:       amount of air used, to transport the needed energy (can be used to calculate a fan)
 
-### idealCondensation 
+### idealCondensation
 Calculates an ideal condensation dryer (heat pump).This function uses coolProp, make sure to have coolProp installed in an MATLAB compatible Phython version (in Phython use: pip install coolProp) For more information, see [CoolProp-Website](http://www.coolprop.org/ "CoolProp-Website").
 #### inputs:
 * temp_cooling:   low temperature of the heat pump
@@ -97,7 +100,7 @@ Simple text logger for software statistics
 #### input:
 * logMessage: Message to log into log-file.
 
-### drawPlot 
+### drawPlot
 Plots the input UIFigure to pdf, png or jpeg. The plotted pdf are usable as scalable vector graphics e.g. in latex. Jpeg and png are not scalable and worse in quality.
 #### input:
 * app: GUI-data variable
