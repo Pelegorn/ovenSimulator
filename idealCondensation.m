@@ -102,11 +102,4 @@ air_per_kg_mango = ...
 %% generating plot
 plot(UIaxes, [processdata(:,1); processdata(1,1)], ...
     [processdata(:,2); processdata(1,2)]*1000, '-r+');
-
-%% plotting psychrometric chart (only for testing function!!!)
-%load('storage/psychplot_base_axhandle.mat');
-
-%openfig('storage/psychplot_base.fig');
-%hold('on');
-%plot(processdata(:,1),processdata(:,2)*1000,'-r+');
 end
